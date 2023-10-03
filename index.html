@@ -4,34 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rolling Dice</title>
+    <title>Roll Dice</title>
 </head>
-<style>
-    button{
-        background-color: red;
-        height: 100px;
-        width: 200px;
-        font-size: 30px;
-    }
-</style>
+
+<!--Tasmin Jahan Web Dev Irimina Pd 9-10 Even-->
+
 <script>
     function roll(){
-        
-       var die1 = Math.floor(Math.random() * 6) + 1;
-       var die2 = Math.floor(Math.random() * 6) + 1;
-       var sum =  die1 + die2;
-        
-        document.getElementById("1").innerHTML = "Die 1: " + die1;
-        document.getElementById("2").innerHTML = "Die 2: " + die2;
-        document.getElementById("3").innerHTML ="Sum: " + sum;
+        randNum = Math.floor(Math.random() * 6) + 1;
     }
-
+    function applyDiceNumbers(){
+        roll();
+        diceTotal=randNum;
+        document.getElementById("die1").innerHTML = "Die 1 Value: " + randNum;
+        roll();
+        diceTotal+=randNum;
+        document.getElementById("die2").innerHTML = "Die 2 Value: " + randNum;
+        document.getElementById("diceTotal").innerHTML = "Total Dice Value: " + diceTotal;
+    }
 </script>
-<body>
-   
-<button onclick="rollD()"> Roll the dice</button>
-<p id = "1"></p>
-<p id = "2"></p>
-<p id = "3"></p>
+<body onload="applyDiceNumbers();">
+    <p id="die1">Die One Value: </p>
+    <p id="die2">Die Two Value: </p>
+    <p id="diceTotal">Total Dice Value: </p>
+    <button onclick="applyDiceNumbers();"> Roll dice!</button>
 </body>
 </html>

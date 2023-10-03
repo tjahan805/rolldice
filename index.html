@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Dice</title>
+</head>
+<style>
+    button{
+        background-color: red;
+        height: 100px;
+        width: 200px;
+        font-size: 30px;
+    }
+</style>
+<script>
+    function roll(){
+        
+       var die1 = Math.floor(Math.random() * 6) + 1;
+       var die2 = Math.floor(Math.random() * 6) + 1;
+       var sum =  die1 + die2;
+        
+        document.getElementById("1").innerHTML = "Die 1: " + die1;
+        document.getElementById("2").innerHTML = "Die 2: " + die2;
+        document.getElementById("3").innerHTML ="Sum: " + sum;
+    }
+
+</script>
+<body>
+   
+<button onclick="rollD()"> Roll the dice</button>
+<p id = "1"></p>
+<p id = "2"></p>
+<p id = "3"></p>
+</body>
+</html>
